@@ -300,6 +300,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PXN-tP-gPM"/>
+                    <connections>
+                        <outlet property="backButtonOutlet" destination="5Ve-fX-xZX" id="36o-yf-Nnu"/>
+                        <outletCollection property="buttonsCollection" destination="MTH-hl-gKr" collectionClass="NSMutableArray" id="LGx-De-fHE"/>
+                        <outletCollection property="buttonsCollection" destination="lhh-Sa-XtW" collectionClass="NSMutableArray" id="Xsw-N9-grg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hs3-wj-b5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="gJu-l7-c6M" userLabel="Exit" sceneMemberID="exit"/>
