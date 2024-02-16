@@ -263,6 +263,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gd9-S5-MX2"/>
+                                    <action selector="leftButtonAction:" destination="UbT-IQ-Jeh" eventType="touchUpInside" id="sVS-Dq-HcU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-hl-gKr">
@@ -283,6 +284,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nn8-FO-z66"/>
+                                    <action selector="rightButtonAction:" destination="UbT-IQ-Jeh" eventType="touchUpInside" id="4ch-WC-GoO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -302,6 +304,7 @@
                     <navigationItem key="navigationItem" id="PXN-tP-gPM"/>
                     <connections>
                         <outlet property="backButtonOutlet" destination="5Ve-fX-xZX" id="36o-yf-Nnu"/>
+                        <outlet property="questionLabel" destination="szQ-Vg-ay3" id="kAt-5i-2ML"/>
                         <outletCollection property="buttonsCollection" destination="MTH-hl-gKr" collectionClass="NSMutableArray" id="LGx-De-fHE"/>
                         <outletCollection property="buttonsCollection" destination="lhh-Sa-XtW" collectionClass="NSMutableArray" id="Xsw-N9-grg"/>
                     </connections>
