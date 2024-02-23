@@ -22,8 +22,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что хотите тренировать?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmo-Lr-ZLy">
-                                <rect key="frame" x="96" y="311" width="201" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to train?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmo-Lr-ZLy">
+                                <rect key="frame" x="94.666666666666671" y="311" width="203.66666666666663" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,6 +38,7 @@
                                             <constraint firstAttribute="height" constant="80" id="93B-LU-wgM"/>
                                             <constraint firstAttribute="width" constant="80" id="E1h-x5-aEx"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="+">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="40"/>
@@ -79,6 +80,7 @@
                                             <constraint firstAttribute="width" constant="80" id="dP8-ko-ZkP"/>
                                             <constraint firstAttribute="height" constant="80" id="tmV-GK-W4u"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="-">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="40"/>
@@ -120,6 +122,7 @@
                                             <constraint firstAttribute="width" constant="80" id="7bT-BH-KuL"/>
                                             <constraint firstAttribute="height" constant="80" id="A8l-nX-Qsj"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="/">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="40"/>
@@ -161,6 +164,7 @@
                                             <constraint firstAttribute="height" constant="80" id="B3A-lc-Lif"/>
                                             <constraint firstAttribute="width" constant="80" id="ebN-1q-pMl"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="*">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="40"/>
@@ -242,9 +246,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-fX-xZX">
-                                <rect key="frame" x="50" y="50" width="62" height="35"/>
+                                <rect key="frame" x="50" y="50" width="58" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleSubhead"/>
+                                    <color key="baseForegroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="gJu-l7-c6M" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="I90-UW-4Ja"/>
                                 </connections>
@@ -256,6 +264,7 @@
                                     <constraint firstAttribute="width" constant="80" id="NcY-kz-tUr"/>
                                     <constraint firstAttribute="height" constant="80" id="xjr-g3-PTa"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="23">
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="30"/>
@@ -277,6 +286,7 @@
                                     <constraint firstAttribute="width" constant="80" id="0B3-pe-yBb"/>
                                     <constraint firstAttribute="height" constant="80" id="Mpl-a6-KA2"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="56">
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="30"/>
