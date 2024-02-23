@@ -12,17 +12,16 @@ final class TrainViewController: UIViewController {
     @IBOutlet var buttonsCollection: [UIButton]!
     @IBOutlet weak var questionLabel: UILabel!
     
+    @IBOutlet weak var countLabel: UILabel!
+    
+    
     @IBOutlet weak var backButtonOutlet: UIButton!
     
     // MARK: - Properties
     var firstNumber = 0
     var secondNumber = 0
     private var sign: String = ""
-    private var count: Int = 0 {
-        didSet {
-            print("Count: \(count)")
-        }
-    }
+    var count: Int = 0
     
     var type: MathTypes = .add {
         didSet {
@@ -76,7 +75,7 @@ final class TrainViewController: UIViewController {
         buttonsCollection.forEach { button in
             button.backgroundColor = .systemYellow
         }
-        // add shadow›
+        // add shadow
         buttonsCollection.forEach{ button in
             button.layer.shadowColor = UIColor.darkGray.cgColor
             button.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -84,20 +83,36 @@ final class TrainViewController: UIViewController {
             button.layer.shadowRadius = 3
         }
         
-        //    let randomButton = Int.random(in: 1...2)
         let isRightAnswer = Bool.random()
         var randomAnswer: Int
-        repeat {
-            randomAnswer = Int.random(in: (answer - 10)...(answer + 10))
-        } while randomAnswer == answer
         
-        buttonsCollection[0].setTitle(isRightAnswer ? String(answer) : String(randomAnswer), for: .normal)
-        buttonsCollection[1].setTitle(isRightAnswer ? String(randomAnswer) : String(answer), for: .normal)
-    }
+            repeat {
+                randomAnswer = Int.random(in: (answer - 10)...(answer + 10))
+            } while randomAnswer == answer
+
+            buttonsCollection[0].setTitle(isRightAnswer ? String(answer) : String(randomAnswer), for: .normal)
+            buttonsCollection[1].setTitle(isRightAnswer ? String(randomAnswer) : String(answer), for: .normal)
+        }
+        //    } while randomAnswer % 2 == 0 && answer % 2 == 0 && randomAnswer == answer
+
     
     private func configureQuestion() {
-        firstNumber = Int.random(in: 0...99)
-        secondNumber = Int.random(in: 0...99)
+        switch sign {
+        case "/":
+            firstNumber = Int.random(in: 2...99)
+            secondNumber = Int.random(in: 1..<firstNumber)
+
+            while firstNumber % secondNumber != 0 {
+                firstNumber = Int.random(in: 2...99)
+                secondNumber = Int.random(in: 1..<firstNumber)
+            }
+        case "*":
+            firstNumber = Int.random(in: 1...99)
+            secondNumber = Int.random(in: 1...10)
+        default:
+            firstNumber = Int.random(in: 1...99)
+            secondNumber = Int.random(in: 1...99)
+        }
         
         let question: String = "\(firstNumber) \(sign) \(secondNumber) ="
         questionLabel.text = question
@@ -108,13 +123,31 @@ final class TrainViewController: UIViewController {
         
         button.backgroundColor = isRightAnswer ? .green : .red
         
-        if isRightAnswer {
-            var isSecondAttempt = buttonsCollection[1].backgroundColor == .red || buttonsCollection[0].backgroundColor == .red
-            count += isSecondAttempt ? 0 : 1
-            count += 1
+        let isSecondAttempt = buttonsCollection[1].backgroundColor == .red || buttonsCollection[0].backgroundColor == .red
+        count += isSecondAttempt ? 0 : 1
+        
+        if count < 10 {
+            countLabel.text = "SCORE: 0\(count)"
+        } else {
+            countLabel.text = "SCORE: \(count)"
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-                self?.configureQuestion()
-                self?.configureButtons()
+            self?.configureQuestion()
+            self?.configureButtons()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? ViewController {
+            if type == .add {
+                viewController.scoreLabelCollection[0].text = String(count)
+            } else if type == .subtract {
+                viewController.scoreLabelCollection[1].text = String(count)
+            } else if type == .multypli {
+                viewController.scoreLabelCollection[2].text = String(count)
+            } else {
+                viewController.scoreLabelCollection[3].text = String(count)
             }
         }
     }

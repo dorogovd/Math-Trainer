@@ -216,6 +216,10 @@
                         <outletCollection property="buttonsCollection" destination="uGC-Oa-3RI" collectionClass="NSMutableArray" id="ZQy-Fy-4oc"/>
                         <outletCollection property="buttonsCollection" destination="YN1-hr-9Zn" collectionClass="NSMutableArray" id="SIP-Pf-R5G"/>
                         <outletCollection property="buttonsCollection" destination="6RJ-Jb-cHM" collectionClass="NSMutableArray" id="SUu-xY-sOx"/>
+                        <outletCollection property="scoreLabelCollection" destination="eXa-Ks-iOG" collectionClass="NSMutableArray" id="kHy-F3-6WQ"/>
+                        <outletCollection property="scoreLabelCollection" destination="q5u-HT-gVr" collectionClass="NSMutableArray" id="UYj-GG-UJJ"/>
+                        <outletCollection property="scoreLabelCollection" destination="ybG-hy-6UW" collectionClass="NSMutableArray" id="Qri-uQ-f5T"/>
+                        <outletCollection property="scoreLabelCollection" destination="b9v-g1-E3R" collectionClass="NSMutableArray" id="xbL-hq-p40"/>
                         <segue destination="UbT-IQ-Jeh" kind="show" identifier="goToNext" id="z4c-WN-Vu9"/>
                     </connections>
                 </viewController>
@@ -287,12 +291,20 @@
                                     <action selector="rightButtonAction:" destination="UbT-IQ-Jeh" eventType="touchUpInside" id="4ch-WC-GoO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOa-nv-eXS">
+                                <rect key="frame" x="226" y="55" width="107" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z48-Vb-P7M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MTH-hl-gKr" firstAttribute="centerY" secondItem="lhh-Sa-XtW" secondAttribute="centerY" id="1uJ-3j-c7H"/>
                             <constraint firstItem="5Ve-fX-xZX" firstAttribute="leading" secondItem="z48-Vb-P7M" secondAttribute="leading" constant="50" id="FEb-iB-C49"/>
+                            <constraint firstItem="uOa-nv-eXS" firstAttribute="top" secondItem="z48-Vb-P7M" secondAttribute="top" constant="55" id="RCv-Iw-Rbf"/>
+                            <constraint firstItem="z48-Vb-P7M" firstAttribute="trailing" secondItem="uOa-nv-eXS" secondAttribute="trailing" constant="60" id="SjW-6I-qzc"/>
                             <constraint firstItem="lhh-Sa-XtW" firstAttribute="top" secondItem="szQ-Vg-ay3" secondAttribute="bottom" constant="120" id="YGV-l8-xk8"/>
                             <constraint firstItem="MTH-hl-gKr" firstAttribute="centerX" secondItem="Dbk-nh-epC" secondAttribute="centerX" constant="60" id="fUa-xJ-cdY"/>
                             <constraint firstItem="szQ-Vg-ay3" firstAttribute="centerX" secondItem="Dbk-nh-epC" secondAttribute="centerX" id="omE-ZJ-S8r"/>
@@ -304,6 +316,7 @@
                     <navigationItem key="navigationItem" id="PXN-tP-gPM"/>
                     <connections>
                         <outlet property="backButtonOutlet" destination="5Ve-fX-xZX" id="36o-yf-Nnu"/>
+                        <outlet property="countLabel" destination="uOa-nv-eXS" id="04c-Hw-2fV"/>
                         <outlet property="questionLabel" destination="szQ-Vg-ay3" id="kAt-5i-2ML"/>
                         <outletCollection property="buttonsCollection" destination="MTH-hl-gKr" collectionClass="NSMutableArray" id="LGx-De-fHE"/>
                         <outletCollection property="buttonsCollection" destination="lhh-Sa-XtW" collectionClass="NSMutableArray" id="Xsw-N9-grg"/>
@@ -312,7 +325,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hs3-wj-b5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="gJu-l7-c6M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="772" y="4"/>
+            <point key="canvasLocation" x="771.75572519083971" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

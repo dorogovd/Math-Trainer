@@ -10,20 +10,27 @@ import UIKit
 enum MathTypes: Int {
     case add, subtract, multypli, divide
 }
+enum CountTypes: Int {
+    case add, subtract, multypli, divide
+}
 
 class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var buttonsCollection: [UIButton]!
     
+    @IBOutlet var scoreLabelCollection: [UILabel]!
+    
+    
     // MARK: - Properties
-   private var selectedType: MathTypes = .add
+    private var selectedType: MathTypes = .add
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureButtons()
+        changeScore()
     }
     
     // MARK: - Actions
@@ -43,13 +50,26 @@ class ViewController: UIViewController {
     }
     
     private func configureButtons() {
-        // add shadow›
+        // add shadow
         buttonsCollection.forEach{ button in
             button.layer.shadowColor = UIColor.darkGray.cgColor
             button.layer.shadowOffset = CGSize(width: 0, height: 2)
             button.layer.shadowOpacity = 0.4
             button.layer.shadowRadius = 3
-            
+        }
+    }
+    
+    func changeScore() {
+        
+        if TrainViewController().count == 0 {
+            scoreLabelCollection.forEach { label in
+                label.text = "-"
+            }
+        } else {
+            scoreLabelCollection[0].text = String(TrainViewController().count)
+            scoreLabelCollection[1].text = String(TrainViewController().count)
+            scoreLabelCollection[2].text = String(TrainViewController().count)
+            scoreLabelCollection[3].text = String(TrainViewController().count)
         }
     }
 }
