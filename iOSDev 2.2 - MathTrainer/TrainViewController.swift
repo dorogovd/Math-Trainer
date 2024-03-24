@@ -258,9 +258,9 @@ final class TrainViewController: UIViewController {
         count += isSecondAttempt ? 0 : 1
         
         if count < 10 {
-            scoreLabel.text = "SCORE: 0\(count)"
+            scoreLabel.text = "Score: 0\(count)"
         } else {
-            scoreLabel.text = "SCORE: \(count)"
+            scoreLabel.text = "Score: \(count)"
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in

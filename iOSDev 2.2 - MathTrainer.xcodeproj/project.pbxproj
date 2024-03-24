@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6347BBF82B9F796800FFBDC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6347BBF72B9F796800FFBDC0 /* Main.storyboard */; };
 		6365C2372B7A8E8600F62EA6 /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365C2362B7A8E8600F62EA6 /* TrainViewController.swift */; };
 		63F8125A2B769B1C007A314D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F812592B769B1C007A314D /* AppDelegate.swift */; };
 		63F8125C2B769B1C007A314D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F8125B2B769B1C007A314D /* SceneDelegate.swift */; };
@@ -17,7 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6347BBF72B9F796800FFBDC0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6365C2362B7A8E8600F62EA6 /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		63F812562B769B1C007A314D /* iOSDev 2.2 - MathTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOSDev 2.2 - MathTrainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F812592B769B1C007A314D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 				63F8125D2B769B1C007A314D /* ViewController.swift */,
 				6365C2362B7A8E8600F62EA6 /* TrainViewController.swift */,
 				63F812622B769B1E007A314D /* Assets.xcassets */,
-				6347BBF72B9F796800FFBDC0 /* Main.storyboard */,
 				63F812642B769B1E007A314D /* LaunchScreen.storyboard */,
 				63F812672B769B1E007A314D /* Info.plist */,
 			);
@@ -128,7 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6347BBF82B9F796800FFBDC0 /* Main.storyboard in Resources */,
 				63F812662B769B1E007A314D /* LaunchScreen.storyboard in Resources */,
 				63F812632B769B1E007A314D /* Assets.xcassets in Resources */,
 			);
@@ -293,7 +289,6 @@
 				INFOPLIST_FILE = "iOSDev 2.2 - MathTrainer/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +318,6 @@
 				INFOPLIST_FILE = "iOSDev 2.2 - MathTrainer/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

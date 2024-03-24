@@ -81,88 +81,45 @@ class ViewController: UIViewController {
     private lazy var addButton: UIButton = {
         let button = UIButton()
         button.tag = 0
-        button.setTitleColor(.black, for: .normal)
         button.setTitle("+", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button.backgroundColor = .systemYellow
-        button.layer.cornerRadius = 40
-        button.layer.shadowColor = UIColor.darkGray.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowOpacity = 0.4
-        button.layer.shadowRadius = 3
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(getMathTypeButtonPressed), for: .touchUpInside)
         return button
     }()
     
     private lazy var subtractButton: UIButton = {
         let button = UIButton()
         button.tag = 1
-        button.setTitleColor(.black, for: .normal)
         button.setTitle("-", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button.backgroundColor = .systemYellow
-        button.layer.cornerRadius = 40
-        button.layer.shadowColor = UIColor.darkGray.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowOpacity = 0.4
-        button.layer.shadowRadius = 3
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(getMathTypeButtonPressed), for: .touchUpInside)
         return button
     }()
     
     private lazy var multypliButton: UIButton = {
         let button = UIButton()
         button.tag = 2
-        button.setTitleColor(.black, for: .normal)
         button.setTitle("*", for: .normal)
         button.contentVerticalAlignment = .bottom
-        button.backgroundColor = .systemYellow
-        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button.layer.cornerRadius = 40
-        button.layer.shadowColor = UIColor.darkGray.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowOpacity = 0.4
-        button.layer.shadowRadius = 3
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(getMathTypeButtonPressed), for: .touchUpInside)
         return button
     }()
     
     private lazy var divideButton: UIButton = {
         let button = UIButton()
         button.tag = 3
-        button.setTitleColor(.black, for: .normal)
         button.setTitle("/", for: .normal)
-        button.backgroundColor = .systemYellow
-        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button.layer.cornerRadius = 40
-        button.layer.shadowColor = UIColor.darkGray.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowOpacity = 0.4
-        button.layer.shadowRadius = 3
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(getMathTypeButtonPressed), for: .touchUpInside)
         return button
     }()
+    
+//    var buttonsCollection: [UIButton] = [addButton, subtractButton]
     
     // MARK: - Properties
     
     private var selectedType: MathTypes = .add
     
-    var observer: NSObjectProtocol?
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+        configureButtons()
     }
     
     //MARK: - Setup UI
@@ -289,15 +246,22 @@ class ViewController: UIViewController {
         present(trainVC, animated: true)
     }
     
-//    private func configureButtons() {
-//        // add shadow
-//        buttonsCollection.forEach{ button in
-//            button.layer.shadowColor = UIColor.darkGray.cgColor
-//            button.layer.shadowOffset = CGSize(width: 0, height: 2)
-//            button.layer.shadowOpacity = 0.4
-//            button.layer.shadowRadius = 3
-//        }
-//    }
+    private func configureButtons() {
+        let buttonsCollection = [addButton, subtractButton, multypliButton, divideButton]
+        buttonsCollection.forEach { button in
+            button.layer.shadowColor = UIColor.darkGray.cgColor
+            button.layer.shadowOffset = CGSize(width: 0, height: 2)
+            button.layer.shadowOpacity = 0.4
+            button.layer.shadowRadius = 3
+            button.layer.cornerRadius = 40
+            button.backgroundColor = .systemYellow
+            button.setTitleColor(.black, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
+            button.clipsToBounds = false
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.addTarget(self, action: #selector(getMathTypeButtonPressed), for: .touchUpInside)
+        }
+    }
     
     private func updateScore(for type: MathTypes, score: Int) {
         switch type {
