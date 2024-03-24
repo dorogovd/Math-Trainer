@@ -15,7 +15,7 @@ final class TrainViewController: UIViewController {
     private var sign: String = ""
     private var count: Int = 0
     
-    public var completion: ((MathTypes, Int) -> Void)? // ???
+    public var completion: ((MathTypes, Int) -> Void)? // COMPLETION
     
     var type: MathTypes = .add {
         didSet {
@@ -47,34 +47,12 @@ final class TrainViewController: UIViewController {
     
     private lazy var firstAnswerButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(.black, for: .normal)
-        button.setTitle("+", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button.backgroundColor = .systemYellow
-        button.layer.cornerRadius = 40
-        button.layer.shadowColor = UIColor.darkGray.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowOpacity = 0.4
-        button.layer.shadowRadius = 3
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(TrainViewController.leftAction), for: .touchUpInside)
         return button
     }()
     
     private lazy var secondAnswerButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(.black, for: .normal)
-        button.setTitle("-", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button.backgroundColor = .systemYellow
-        button.layer.cornerRadius = 40
-        button.layer.shadowColor = UIColor.darkGray.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowOpacity = 0.4
-        button.layer.shadowRadius = 3
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(TrainViewController.rightAction), for: .touchUpInside)
         return button
     }()
@@ -90,7 +68,7 @@ final class TrainViewController: UIViewController {
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
         button.layer.shadowOpacity = 0.4
         button.layer.shadowRadius = 3
-        button.clipsToBounds = true
+        button.clipsToBounds = false
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
         return button
@@ -206,14 +184,17 @@ final class TrainViewController: UIViewController {
     private func updateButtons() {
         let buttonsCollection = [firstAnswerButton, secondAnswerButton]
         buttonsCollection.forEach { button in
+            button.setTitleColor(.black, for: .normal)
+            button.setTitle("...", for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
             button.backgroundColor = .systemYellow
-        }
-        // add shadow
-        buttonsCollection.forEach{ button in
+            button.layer.cornerRadius = 40
             button.layer.shadowColor = UIColor.darkGray.cgColor
             button.layer.shadowOffset = CGSize(width: 0, height: 2)
             button.layer.shadowOpacity = 0.4
             button.layer.shadowRadius = 3
+            button.clipsToBounds = false
+            button.translatesAutoresizingMaskIntoConstraints = false
         }
         
         let isRightAnswer = Bool.random()

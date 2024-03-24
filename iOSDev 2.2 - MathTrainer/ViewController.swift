@@ -39,42 +39,18 @@ class ViewController: UIViewController {
     
      var scoreLabel1: UILabel = {
         let label = UILabel()
-        label.text = "-"
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     var scoreLabel2: UILabel = {
         let label = UILabel()
-        label.text = "-"
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     var scoreLabel3: UILabel = {
         let label = UILabel()
-        label.text = "-"
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     var scoreLabel4: UILabel = {
         let label = UILabel()
-        label.text = "-"
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 17)
-        label.textColor = .black
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -120,6 +96,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureButtons()
+        configureScoreLabels()
     }
     
     //MARK: - Setup UI
@@ -260,6 +237,18 @@ class ViewController: UIViewController {
             button.clipsToBounds = false
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(getMathTypeButtonPressed), for: .touchUpInside)
+        }
+    }
+    
+    private func configureScoreLabels() {
+        let scoreLabelsCollection = [scoreLabel1, scoreLabel2, scoreLabel3, scoreLabel4]
+        scoreLabelsCollection.forEach { label in
+            label.text = "-"
+            label.textAlignment = .center
+            label.font = .systemFont(ofSize: 17)
+            label.textColor = .black
+            label.numberOfLines = 0
+            label.translatesAutoresizingMaskIntoConstraints = false
         }
     }
     
